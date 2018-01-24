@@ -28,25 +28,25 @@ Eg: `java -jar TagCNV.jar  minld=0.8 vcf=Chr1.example.vcf.gz cnv=Chr1.example_cn
 
 **WARNING:** The programme is designed to process a single chromosome at a time
 
-cnv:       Required; VCF file with fractional values for copy number; eg as output by GenomeStrip. It should NOT be bgzipped
+**cnv:**       Required; VCF file with fractional values for copy number; eg as output by GenomeStrip. It should NOT be bgzipped
 
-minld:     Required; Threshold ld value for building haplotypes
+**minld:**     Required; Threshold ld value for building haplotypes
 
-vcf:       Required; String; vcf file of PHASED SNP to be used. It MUST be bgzipped
+**vcf:**       Required; String; vcf file of PHASED SNP to be used. It MUST be bgzipped
 
-out:       Required; Root name for output files
+**out:**       Required; Root name for output files
 
-ld:        Optional; Tab delimited file of r2 linkage values generated with vcftools command  eg: vcftools --gzvcf Chr20.vcf.gz --bed Chr20.list.bed  --hap-r2 --ld-window-bp 50000 --out Chr20-ld50000; where the bed file is a list of CNV loci. This will produce a file with these columns: with columns CHR    POS1    POS2    N_CHR    R^2    D    Dprime; Only the R^2 column will be used D and Dprime will be ignored unless the parameter dprime=true is used; If ld is not set then vcftools will be used to generate the file 
+**ld:**        Optional; Tab delimited file of r2 linkage values generated with vcftools command  eg: vcftools --gzvcf Chr20.vcf.gz --bed Chr20.list.bed  --hap-r2 --ld-window-bp 50000 --out Chr20-ld50000; where the bed file is a list of CNV loci. This will produce a file with these columns: with columns CHR    POS1    POS2    N_CHR    R^2    D    Dprime; Only the R^2 column will be used D and Dprime will be ignored unless the parameter dprime=true is used; If ld is not set then vcftools will be used to generate the file 
 
-dprime:    Optional; Boolean; if dprime=true then dprime will be used for ld calculations instead of the default r squared
+**dprime:**    Optional; Boolean; if dprime=true then dprime will be used for ld calculations instead of the default r squared
 
-flanks:    Optional; Integer; length of flanks (in bp) either side of the CNV locus to test for haplotypes associated with CNV; default 0
+**flanks:**    Optional; Integer; length of flanks (in bp) either side of the CNV locus to test for haplotypes associated with CNV; default 0
 
-samples:   Optional; String; file with list of subset of samples from vcf file to be included in the analysis 
+**samples:**   Optional; String; file with list of subset of samples from vcf file to be included in the analysis 
 
-LMplots:   Optional; Boolean; default false; generate plots of the Linear Regression of Copy Number on haplotype genotype count. There will be a lot of these, so perhaps best used on short runs on interesting CNV and for diagnostics
+**LMplots:**   Optional; Boolean; default false; generate plots of the Linear Regression of Copy Number on haplotype genotype count. There will be a lot of these, so perhaps best used on short runs on interesting CNV and for diagnostics
 
-cleanUp:   Optional; Boolean; default true; if cleanUp=false then intermediate files will not be deleted at the end of the run. This is useful for debugging and visualising the algorithm 
+**cleanUp:**   Optional; Boolean; default true; if cleanUp=false then intermediate files will not be deleted at the end of the run. This is useful for debugging and visualising the algorithm 
 
 
 ### How Haplotypes are constructed
